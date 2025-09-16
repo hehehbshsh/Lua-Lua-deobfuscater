@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lua Deobfuscator Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="deobfuscation-icon.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="deobfuscation-icon.png" alt="Deobfuscator Icon" class="logo">
+            <h1>MoonSec V3 Deobfuscator Tool</h1>
+        </div>
+        <p class="description">Paste your obfuscated Lua script below and click "Deobfuscate" to clean it up.</p>
+        
+        <div class="input-output-container">
+            <div class="code-container">
+                <h2>Obfuscated Code</h2>
+                <div class="textarea-wrapper">
+                    <textarea id="inputCode" placeholder="Paste your MoonSec V3 obfuscated code here..."></textarea>
+                    <button id="clearInputBtn" class="small-btn">Clear</button>
+                </div>
+            </div>
+            
+            <div class="actions">
+                <button id="deobfuscateBtn">
+                    <img src="deobfuscation-icon.png" alt="Deobfuscate" class="btn-icon">
+                    Deobfuscate
+                </button>
+                <div class="loader" id="loader"></div>
+                <div id="statusMessage" class="status-message"></div>
+            </div>
+            
+            <div class="code-container">
+                <h2>Deobfuscated Code</h2>
+                <div class="textarea-wrapper">
+                    <textarea id="outputCode" placeholder="Deobfuscated code will appear here..." readonly></textarea>
+                    <button id="copyBtn" class="small-btn">Copy to Clipboard</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-container" id="statsContainer">
+            <div class="stat-item">
+                <span class="stat-label">Lines of Code:</span>
+                <span class="stat-value" id="lineCount">-</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">VM Tables Removed:</span>
+                <span class="stat-value" id="tableCount">-</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Variables Renamed:</span>
+                <span class="stat-value" id="varCount">-</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Processing Time:</span>
+                <span class="stat-value" id="processTime">-</span>
+            </div>
+        </div>
+
+        <div class="features">
+            <h3>Features</h3>
+            <ul>
+                <li><span class="feature-icon">🧩</span> Removes MoonSec V3 bytecode tables and VM structure</li>
+                <li><span class="feature-icon">🔄</span> Rebuilds original code logic</li>
+                <li><span class="feature-icon">✏️</span> Renames obfuscated variables to readable names</li>
+                <li><span class="feature-icon">⚙️</span> Preserves code functionality</li>
+                <li><span class="feature-icon">🔍</span> Formats code with proper indentation</li>
+            </ul>
+        </div>
+
+        <div class="disclaimer">
+            <h3>Disclaimer</h3>
+            <p>This tool is for educational purposes only. Only use it on scripts you have permission to modify. The tool processes Lua scripts protected with MoonSec V3 obfuscation used in Roblox development.</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
